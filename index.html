@@ -72,7 +72,7 @@
     // Check the existence of the function as shown in the sample code before using it.
     async function scanCode() {
       const result = await liff.scanCode()
-      document.getElementById("btnScanCode").append(result.value)
+      document.getElementById("scanCode").append(result.value)
     }
 
     function openWindow() {
@@ -164,13 +164,16 @@
       // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "1656392198-8Dg7rN2g" })
       // Code ต่างๆจะทำงานได้ก็ต่อเมื่อผ่าน liff.init ตรงนี้ไปก่อน
-
-    
-      getEnvironment()
-      getUserProfile()
-      getContext()
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+      if (liff.isLoggedIn()){
+        getEnvironment()
+        getUserProfile()
+        getContext()
       // getFriendship()
       // createUniversalLink()
+      }
+
+      
     }
     main()
   </script>
