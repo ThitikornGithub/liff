@@ -69,16 +69,23 @@
     }
 
     function openWindow() {
+      liff.openWindow({
+        url: "https://line.me",
+        external: true
+      })
     }
 
     async function getFriendship() {
-      const friend = await liff.getFriendship()
-      document.getElementById("friendship").append(friend.friendFlag)
-      if(!friend.friendFlag) {
-        if(confirm("คุณยังไม่ได้เพิ่ม Bot เป้นเพื่อ จะเพิ่มเลยไหม?")) {
-          window.location = "https://line.me/R/ti/p/@713xolii"
-        }
-      }
+      
+      // ตอนนี้ยังไม่มี ChatBot เพราะงั้น function นี้จะไม่ทำงาน
+      
+      // const friend = await liff.getFriendship()
+      // document.getElementById("friendship").append(friend.friendFlag)
+      // if(!friend.friendFlag) {
+      //   if(confirm("คุณยังไม่ได้เพิ่ม Bot เป้นเพื่อ จะเพิ่มเลยไหม?")) {
+      //     window.location = "https://line.me/R/ti/p/@713xolii"
+      //   }
+      // }
     }
 
     async function sendMsg() {
