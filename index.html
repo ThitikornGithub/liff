@@ -73,7 +73,9 @@
       liff.openWindow({
         url: "https://line.me",
         external: true
-      });
+      }).catch((err) => {
+            alert('error', err);
+          });
       alert("Postwork");
     }
 
@@ -164,7 +166,7 @@
       getEnvironment()
       getUserProfile()
       getContext()
-      getFriendship()
+      // getFriendship()
       // createUniversalLink()
     }
     main()
