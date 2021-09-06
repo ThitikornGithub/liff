@@ -66,8 +66,10 @@
     }
 
     function closed() {
+      liff.clodeWindow();
     }
-
+    // Due to a technical issue, liff.scanCode() will be undefined on LINE 9.19.0 or later for iOS. 
+    // Check the existence of the function as shown in the sample code before using it.
     async function scanCode() {
       const result = await liff.scanCode()
       document.getElementById("btnScanCode").append(result.value)
