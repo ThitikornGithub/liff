@@ -165,7 +165,7 @@
       await liff.init({ liffId: "1656392198-8Dg7rN2g" })
       // Code ต่างๆจะทำงานได้ก็ต่อเมื่อผ่าน liff.init ตรงนี้ไปก่อน
       document.getElementById("isLoggedIn").append(liff.isLoggedIn())
-      if (liff.isLoggedIn()){
+      if (liff.isLoggedIn() == true){
         getEnvironment()
         getUserProfile()
         getContext()
