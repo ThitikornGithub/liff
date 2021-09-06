@@ -72,26 +72,33 @@
     }
 
     async function getFriendship() {
+      const friend = await liff.getFriendship()
+      document.getElementById("friendship").append(friend.friendFlag)
+      if(!friend.friendFlag) {
+        if(confirm("คุณยังไม่ได้เพิ่ม Bot เป้นเพื่อ จะเพิ่มเลยไหม?")) {
+          window.location = "https://line.me/R/ti/p/@713xolii"
+        }
+      }
     }
 
     async function sendMsg() {
-    if (liff.getContext().type !== "none") {
-      await liff.sendMessages([
-        {
-          "type" : "sticker",
-          "stickerId" : "1988",
-          "packageId" : "446"
-        }
-      ])
-      // .then(() => {
-      //   alert('YYY');
-      // })
-      .catch((err) => {
-        alert('error', err);
-      });
-        // alert("Message Sent")
+        if (liff.getContext().type !== "none") {
+          await liff.sendMessages([
+            {
+              "type" : "sticker",
+              "stickerId" : "1988",
+              "packageId" : "446"
+            }
+          ])
+          // .then(() => {
+          //   alert('YYY');
+          // })
+          .catch((err) => {
+            alert('error', err);
+          });
+            // alert("Message Sent")
 
-    }
+        }
     
     }
 
@@ -148,7 +155,7 @@
       getEnvironment()
       getUserProfile()
       getContext()
-      // getFriendship()
+      getFriendship()
       // createUniversalLink()
     }
     main()
